@@ -1,35 +1,47 @@
+
+
 import React from "react";
-import Ecommerce from "../assets/tiendaOli1.png";
 import tienda from "../assets/tiendaBarby1.png";
 import tiendaInfantil from "../assets/tiendaInfantil.png";
+import valonia from "../assets/Valonia.png";
+import mateMatico from "../assets/mateMatico.png";
 
 const projects = [
   {
-    title: "E-commerce en producción — Cliente real",
+    title: "E-commerce | Cliente real",
     image: tienda,
     description:
-      "Plataforma e-commerce full stack en producción desarrollada con React, Node.js, Express y MySQL. Incluye autenticación de usuarios, carrito de compras, sistema de favoritos y panel de administración con CRUD completo.",
-    tech: ["React", "Vite", "Tailwind", "Node.js", "Express", "MySQL", "Cloudinary"],
+      "Tienda online full stack con autenticación, carrito, favoritos y panel de administración.",
+    tech: ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "MySQL"],
     github: "https://github.com/elikaye/tiendaModa",
     demo: "https://tiendabarby.vercel.app/",
   },
   {
-    title: "E-commerce listo para implementación",
+    title: "E-commerce adaptable",
     image: tiendaInfantil,
     description:
-      "Sistema e-commerce full stack completamente funcional y listo para implementar en distintos negocios. Permite personalizar branding, imágenes y datos sin modificar la lógica.",
-    tech: ["React", "Node.js", "Express", "MySQL", "Cloudinary"],
-    github: "",
+      "Sistema de tienda online preparado para personalizar y adaptar a diferentes negocios.",
+    tech: ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "MySQL"],
+    github: "https://github.com/elikaye/tiendabarbi-demo",
     demo: "https://tiendainfantil.vercel.app/",
   },
   {
-    title: "Interfaz e-commerce (Frontend UI)",
-    image: Ecommerce,
+    title: "Valonia | Landing Page",
+    image: valonia,
     description:
-      "Interfaz de e-commerce desarrollada con HTML, CSS y JavaScript, enfocada en UI/UX y diseño responsive.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/elikaye/tienda-nube",
-    demo: "https://tienda-oli.netlify.app",
+      "Landing page responsive con una interfaz moderna y una experiencia de usuario clara.",
+    tech: ["React", "Vite", "Tailwind CSS"],
+    github: "https://github.com/elikaye/valonia-landing",
+    demo: "https://valonia-landing.vercel.app/",
+  },
+  {
+    title: "Mate-Mático | Proyecto colaborativo",
+    image: mateMatico,
+    description:
+      "Aplicación educativa desarrollada en equipo, con integración frontend y metodología Scrum.",
+    tech: ["React", "CSS", "Git", "GitHub", "Scrum"],
+    github: "https://github.com/Innova-Lab-Mate-Matico/mate-matico",
+    demo: "https://mate-matico.vercel.app/",
   },
 ];
 
@@ -37,69 +49,63 @@ const Projects = () => {
   return (
     <section
       id="proyectos"
-      className="py-14 md:py-24 px-6 bg-black scroll-mt-24 md:scroll-mt-28"
+      className="px-5 py-16 md:px-8 md:py-24 bg-black scroll-mt-24"
     >
-      <div className="max-w-6xl mx-auto">
-
-        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-10 md:mb-16">
-          Proyectos
-        </h2>
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-10 md:mb-14">
+          <p className="text-violet-400 text-xs tracking-[0.3em] uppercase mb-3">
+            Mi trabajo
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white">
+            Proyectos
+          </h2>
+          <div className="w-14 h-1 bg-violet-500 rounded-full mx-auto mt-4" />
+        </div>
 
         {/* MOBILE */}
-        <div className="flex md:hidden gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
-
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="
-              min-w-[280px]
-              snap-center
-              bg-black/60 backdrop-blur-sm
-              rounded-xl overflow-hidden
-              border border-violet-500/40
-              shadow-[0_0_10px_rgba(139,92,246,0.4)]
-              hover:shadow-[0_0_25px_rgba(139,92,246,0.8)]
-              hover:-translate-y-2
-              transition-all duration-300
-              "
+        <div className="flex md:hidden gap-4 overflow-x-auto pb-5 snap-x snap-mandatory">
+          {projects.map((project) => (
+            <article
+              key={project.title}
+              className="group min-w-[260px] max-w-[280px] snap-center overflow-hidden rounded-2xl border border-white/10 bg-zinc-950 hover:border-violet-500/60 transition-all duration-300"
             >
-
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-40 object-contain bg-black"
-              />
+              <div className="h-36 overflow-hidden bg-zinc-900">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
 
               <div className="p-4">
-
                 <h3 className="text-white text-base font-semibold mb-2">
                   {project.title}
                 </h3>
 
-                <p className="text-white/70 text-xs mb-3 leading-relaxed">
+                <p className="text-zinc-400 text-xs leading-relaxed mb-4">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {project.tech.map((t, i) => (
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {project.tech.map((technology) => (
                     <span
-                      key={i}
-                      className="text-[10px] text-white/80 border border-white/20 px-2 py-1 rounded"
+                      key={technology}
+                      className="text-[10px] text-violet-200/90 bg-violet-500/10 border border-violet-400/20 px-2 py-1 rounded-full"
                     >
-                      {t}
+                      {technology}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex gap-2">
-
+                <div className="flex items-center gap-3 pt-3 border-t border-white/10">
                   <a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3 py-1 text-[11px] rounded-md bg-violet-500 text-white hover:bg-violet-400 transition"
+                    className="text-xs font-medium text-violet-300 hover:text-white transition-colors"
                   >
-                    Ver sitio
+                    Ver proyecto ↗
                   </a>
 
                   {project.github && (
@@ -107,54 +113,61 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1 text-[11px] rounded-md border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-black transition"
+                      className="text-xs text-zinc-400 hover:text-emerald-400 transition-colors"
                     >
-                      GitHub
+                      GitHub ↗
                     </a>
                   )}
-
                 </div>
-
               </div>
-            </div>
+            </article>
           ))}
-
         </div>
 
-        {/* DESKTOP */}
-        <div className="hidden md:grid md:grid-cols-3 gap-6 mt-12">
-
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="
-              bg-black/60 backdrop-blur-sm
-              rounded-xl overflow-hidden
-              border border-violet-500/40
-              shadow-[0_0_10px_rgba(139,92,246,0.4)]
-              hover:shadow-[0_0_25px_rgba(139,92,246,0.8)]
-              hover:-translate-y-2
-              transition-all duration-300
-              "
+        {/* DESKTOP: DOS COLUMNAS */}
+        <div className="hidden md:grid md:grid-cols-2 gap-6 lg:gap-8">
+          {projects.map((project) => (
+            <article
+              key={project.title}
+              className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-zinc-950/80 hover:border-violet-500/60 hover:shadow-[0_0_28px_rgba(139,92,246,0.12)] transition-all duration-300"
             >
-
-              <div className="relative group overflow-hidden">
-
+              <div className="h-48 lg:h-52 overflow-hidden bg-zinc-900/80">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-contain bg-black transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
                 />
+              </div>
 
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-4">
+              <div className="flex flex-1 flex-col p-5 lg:p-6">
+                <h3 className="text-white text-lg font-semibold mb-2 group-hover:text-violet-300 transition-colors">
+                  {project.title}
+                </h3>
 
+                <p className="text-zinc-400 text-sm leading-relaxed mb-4">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {project.tech.map((technology) => (
+                    <span
+                      key={technology}
+                      className="text-xs text-violet-200/90 bg-violet-500/10 border border-violet-400/20 px-2.5 py-1 rounded-full"
+                    >
+                      {technology}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mt-auto flex items-center gap-4 pt-4 border-t border-white/10">
                   <a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 text-sm rounded-lg bg-violet-500 text-white hover:bg-violet-400 transition"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-violet-300 hover:text-white transition-colors"
                   >
-                    Ver sitio
+                    Ver proyecto <span>↗</span>
                   </a>
 
                   {project.github && (
@@ -162,43 +175,16 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-4 py-2 text-sm rounded-lg border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-black transition"
+                      className="inline-flex items-center gap-1.5 text-sm text-zinc-400 hover:text-emerald-400 transition-colors"
                     >
-                      GitHub
+                      GitHub <span>↗</span>
                     </a>
                   )}
-
                 </div>
-
               </div>
-
-              <div className="p-4">
-
-                <h3 className="text-white text-lg font-semibold mb-2">
-                  {project.title}
-                </h3>
-
-                <p className="text-white/70 text-sm mb-3 leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {project.tech.map((t, i) => (
-                    <span
-                      key={i}
-                      className="text-xs text-white/80 border border-white/20 px-2 py-1 rounded"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-
-              </div>
-            </div>
+            </article>
           ))}
-
         </div>
-
       </div>
     </section>
   );

@@ -62,7 +62,7 @@ const ContactForm = () => {
 
               {/* BOTÓN CV ABAJO DE LOS ICONOS, VERDE ESMERALDA, ancho fijo */}
          <a
-          href="/Eliana Kaye-CV.pdf"
+          href="/Eliana_Kaye_CV (3).pdf"
            download
             className="mt-2 px-4 py-2 bg-violet-600 hover:bg-emerald-500 text-white rounded-lg font-semibold transition shadow-glow hover:shadow-glow-lg text-sm"
             style={{ width: "3cm", textAlign: "center" }}
