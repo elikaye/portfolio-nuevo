@@ -115,8 +115,8 @@ const Experience = () => {
             </h3>
 
             <p className="text-white/70 text-sm leading-relaxed">
-              E-commerce en <strong>producción</strong> usado por la clienta,
-              con React, Node.js y base de datos. La compra se cierra vía
+              E-commerce en Producción.
+              React, Tailwind Css, Node.js y base de datos. La compra se cierra vía
               WhatsApp.
             </p>
           </div>
@@ -130,7 +130,7 @@ const Experience = () => {
             transition-all duration-300 text-left"
           >
             <h3 className="text-white font-semibold mb-2 text-xl">
-              Certificaciones UX/UI
+              Certificaciones 
             </h3>
 
             <p className="text-white/70 text-sm leading-relaxed">
